@@ -51,11 +51,34 @@ void User(){
         }
     }
 };
+void Register(){
+    string User;
+    string Pass;
+    cout << "Create a username: ";
+    cin >> User;
+    cout << "Create your password: ";
+    cin >> Pass;
+    ofstream writer_user("Users.txt", ios_base::app);
+    if(writer_user.is_open()){
+        writer_user << "\n" << User;
+        cout << "Username added!\n";
+    }
+    writer_user.close();
+    ofstream writer_pass("Pass.txt", ios_base::app);
+    if(writer_pass.is_open()){
+        writer_pass << "\n" << Pass;
+        cout << "Password added!\n";
+    }
+    cout << "Account Created!";
+}
 int main() {
     string choice;
     cout << "Welcome to the Login Page\n Do you want to: \n (1) Login \n (2) Register\n";
     cin >> choice;
     if(choice == "1") {
         User();
+    }
+    else if(choice == "2"){
+        Register();
     }
 }
