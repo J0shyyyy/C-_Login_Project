@@ -91,15 +91,16 @@ void Register(){
     cin >> User;
     cout << "Create your password: ";
     cin >> Pass;
+    string Hash = sha256(Pass);
     ofstream writer_user("Users.txt", ios_base::app);
     if(writer_user.is_open()){
-        writer_user << "\n" << User;
+        writer_user << User << "\n";
         cout << "Username added!\n";
     }
     writer_user.close();
     ofstream writer_pass("Pass.txt", ios_base::app);
     if(writer_pass.is_open()){
-        writer_pass << "\n" << Pass;
+        writer_pass << Hash << "\n";
         cout << "Password added!\n";
     }
     cout << "Account Created!";
