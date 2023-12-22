@@ -1,3 +1,3 @@
-D:/Clion/Clion Projects/Login_Project/cmake-build-debug/CMakeFiles/Login_Project.dir
-D:/Clion/Clion Projects/Login_Project/cmake-build-debug/CMakeFiles/edit_cache.dir
-D:/Clion/Clion Projects/Login_Project/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/joshyyy/CLionProjects/C-_Login_Project/cmake-build-debug/CMakeFiles/Login_Project.dir
+/home/joshyyy/CLionProjects/C-_Login_Project/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/joshyyy/CLionProjects/C-_Login_Project/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include "SHA256.h"
 using namespace std;
 void Pass(string Username, int number) {
     string Password;
@@ -51,7 +52,7 @@ void User(){
         cin >> Username;
         ifstream Users;
         Users.open("Users.txt");
-        int count;
+        int count = 0;
         if (Users.is_open()) {
             string lines;
             while (getline(Users, lines)) {
