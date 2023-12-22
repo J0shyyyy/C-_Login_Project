@@ -27,7 +27,7 @@ void Pass(string Username, int number) {
                     i++;
                 }
                 for (int j = 0; j < (sizeof(Passarr) / sizeof(*Passarr)); j++) {
-                    if (Passarr[j] == Password) {
+                    if (Passarr[j] == sha256(Password)) {
                         if (j == number) {
                             cout << "Welcome " << Username;
                             yeet1 = true;
@@ -87,8 +87,26 @@ void User(){
 void Register(){
     string User;
     string Pass;
-    cout << "Create a username: ";
-    cin >> User;
+    bool test = false;
+    while (!test) {
+        bool dupe = false;
+        cout << "Create a username: ";
+        cin >> User;
+        ifstream check;
+        check.open("Users.txt");
+        string lines;
+        if (check.is_open()) {
+            while (getline(check, lines)) {
+                if (User == lines) {
+                    cout << "Duplicate name detected, please use a different username!" << "\n";
+                    dupe = true;
+                }
+            }
+            if(!dupe){
+                test = true;
+            }
+        }
+    }
     cout << "Create your password: ";
     cin >> Pass;
     string Hash = sha256(Pass);
